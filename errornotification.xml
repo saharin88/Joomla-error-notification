@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+    <name>plg_system_errornotification</name>
+    <author>JoomWork</author>
+    <creationDate>June 2022</creationDate>
+    <authorEmail>admin@joomla.work</authorEmail>
+    <authorUrl>http://joom.work/</authorUrl>
+    <version>1.0.0</version>
+    <description>PLG_SYSTEM_ERRORNOTIFICATION_XML_DESCRIPTION</description>
+
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files>
+        <filename plugin="errornotification">errornotification.php</filename>
+        <folder>sql</folder>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/plg_system_errornotification.ini</language>
+        <language tag="en-GB">en-GB/plg_system_errornotification.sys.ini</language>
+        <language tag="uk-UA">uk-UA/plg_system_errornotification.ini</language>
+        <language tag="uk-UA">uk-UA/plg_system_errornotification.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="email"
+                        type="text"
+                        label="PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_LBL"
+                        description="PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_DESC"
+                        default=""
+                />
+
+                <field
+                        name="language_override"
+                        type="language"
+                        label="PLG_SYSTEM_ERRORNOTIFICATION_LANGUAGE_OVERRIDE_LBL"
+                        description="PLG_SYSTEM_ERRORNOTIFICATION_LANGUAGE_OVERRIDE_DESC"
+                        default=""
+                        client="administrator"
+                >
+                    <option value="">PLG_SYSTEM_ERRORNOTIFICATION_LANGUAGE_OVERRIDE_NONE</option>
+                </field>
+
+                <field
+                        name="ignore_error"
+                        type="text"
+                        label="PLG_SYSTEM_ERRORNOTIFICATION_IGNORE_ERROR_LBL"
+                        description="PLG_SYSTEM_ERRORNOTIFICATION_IGNORE_ERROR_DESC"
+                        hint="403,404,405"
+                        default=""
+                />
+
+                <field
+                        name="ignore_administrator"
+                        type="radio"
+                        label="PLG_SYSTEM_ERRORNOTIFICATION_IGNORE_ADMINISTRATOR_LABEL"
+                        default="1"
+                        layout="joomla.form.field.radio.switcher"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>
