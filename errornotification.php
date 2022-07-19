@@ -133,7 +133,7 @@ class PlgSystemErrornotification extends CMSPlugin
 
 	private function getSuperUsersWhoToBeNotified()
 	{
-		$db     = $this->db;
+		$db    = $this->db;
 		$email = $this->params->get('email');
 
 		// Convert the email list to an array
@@ -238,7 +238,7 @@ class PlgSystemErrornotification extends CMSPlugin
 		return $ret;
 	}
 
-	private function getLanguage(): \Joomla\CMS\Language\Language
+	protected function getLanguage(): \Joomla\CMS\Language\Language
 	{
 		/*
 		 * Load the appropriate language. We try to load English (UK), the current user's language and the forced
