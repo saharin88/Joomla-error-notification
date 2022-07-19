@@ -133,7 +133,7 @@ class PlgSystemErrornotification extends CMSPlugin
 
 	private function getSuperUsersWhoToBeNotified()
 	{
-		$db     = $this->db;
+		$db    = $this->db;
 		$email = $this->params->get('email');
 
 		// Convert the email list to an array

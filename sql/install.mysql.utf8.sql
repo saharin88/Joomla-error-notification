@@ -1,2 +1,2 @@
 INSERT INTO `#__mail_templates` (`template_id`, `extension`, `language`, `subject`, `body`, `htmlbody`, `attachments`, `params`) VALUES
-('plg_system_errornotification.mail', 'plg_system_errornotification', '', 'PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_SUBJECT', 'PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_BODY', '', '', '{"tags":["sitename", "url", "code","message","line","file","trace","traceTable"]}');
+('plg_system_errornotification.mail', 'plg_system_errornotification', '', 'PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_SUBJECT', 'PLG_SYSTEM_ERRORNOTIFICATION_EMAIL_BODY', '', '', '{"tags":["sitename", "url", "code","message","line","file","trace"]}');
